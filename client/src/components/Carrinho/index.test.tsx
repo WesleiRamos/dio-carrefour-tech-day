@@ -4,8 +4,6 @@ import * as Style from './styles'
 import { PRODUTOS } from '../../test/server'
 import { render, screen, fireEvent, createMockStore } from '../../test/render'
 
-window.scrollTo = jest.fn()
-
 const carrinhoState: CarrinhoState = {
   carrinhoAberto: true,
   carrinho: [ ...PRODUTOS ]
