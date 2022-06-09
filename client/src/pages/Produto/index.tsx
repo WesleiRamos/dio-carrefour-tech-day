@@ -1,8 +1,8 @@
-import ProdutoWrapper from './styles'
 import { AppDispatch } from '../../store'
 import { useParams } from 'react-router-dom'
 import Button from '../../components/Button'
 import Quantity from '../../components/Quantity'
+import ProdutoWrapper, * as Style from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAppState, selectCarrinhoState, alterarQuantidadeProduto } from '../../store/slices'
 
@@ -16,9 +16,9 @@ const Produto = () => {
   if (!produto) {
     return (
       <ProdutoWrapper>
-        <p className='nao-encontrado'>
+        <Style.NaoEncontrado>
           Produto não encontrado
-        </p>
+        </Style.NaoEncontrado>
       </ProdutoWrapper>
     )
   }
@@ -70,44 +70,44 @@ const Produto = () => {
 
   return (
     <ProdutoWrapper>
-      <p className='categorias'>
+      <Style.Categorias>
         <b>Você está em: </b> { renderCategorias() }
-      </p>
+      </Style.Categorias>
 
-      <div className='produto'>
-        <div className='imagem'>
+      <Style.Produto>
+        <Style.Imagem>
           <img src={ produto.imagem } alt={ produto.nome } />
-        </div>
+        </Style.Imagem>
 
-        <div className='informacoes'>
-          <p className='nome'>
+        <Style.Informacoes>
+          <Style.Nome>
             { produto.nome }
-          </p>
+          </Style.Nome>
 
-          <p className='marca'>
+          <Style.Marca>
             Marca: <b>{ produto.marca }</b>
-          </p>
+          </Style.Marca>
 
-          <div className='flex preco'>
-            <p className='preco'>
+          <Style.Preco className='flex'>
+            <p>
               { produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }
             </p>
 
-            <div className='add-carrinho'>
+            <Style.AdicionarCarrinho>
               { renderizarAcao() }
-            </div>
-          </div>
+            </Style.AdicionarCarrinho>
+          </Style.Preco>
 
-          <div className='flex condicoes'>
+          <Style.Condicoes className='flex'>
             <i className='gg-credit-card' />
             <span>Condições de pagamento</span>
-          </div>
+          </Style.Condicoes>
 
-          <div className='descricao'>
+          <Style.Descricao className='descricao'>
             {produto.descricao}
-          </div>
-        </div>
-      </div>
+          </Style.Descricao>
+        </Style.Informacoes>
+      </Style.Produto>
     </ProdutoWrapper>
   )
 }

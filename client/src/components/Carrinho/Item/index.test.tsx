@@ -1,5 +1,6 @@
 import Item from '.'
 import React from 'react'
+import * as Style from './styles'
 import { PRODUTO } from '../../../test/server'
 import { render, screen, fireEvent, createMockStore } from '../../../test/render'
 
@@ -7,7 +8,7 @@ describe('<Item />', () => {
   test('renderiza um item do carrinho', () => {
     const { container } = render(<Item produto={PRODUTO} />)
 
-    const imagemElement = container.querySelector('.imagem img')
+    const imagemElement = container.querySelector(`${Style.Imagem} img`)
     expect(imagemElement).toHaveAttribute('src', PRODUTO.imagem)
     expect(imagemElement).toHaveAttribute('alt', PRODUTO.nome)
 
@@ -34,7 +35,7 @@ describe('<Item />', () => {
 
     const { container } = render(<Item produto={PRODUTO} />, { store})
 
-    const removerElement = container.querySelector('.remover')
+    const removerElement = container.querySelector(`${Style.Remover}`)
     await fireEvent.click(removerElement as Element)
 
     expect(store.getState().carrinho.carrinho).toHaveLength(0)

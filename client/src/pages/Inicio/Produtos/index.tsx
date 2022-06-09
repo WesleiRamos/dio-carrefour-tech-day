@@ -8,11 +8,9 @@ type ProdutosProps = {
 const Produtos = (props: ProdutosProps) => {
   return (
     <ProdutosWrapper>
-      <div className='produtos'>
-        {props.produtos.map(produto => (
-          <Produto produto={produto} key={produto.id} />
-        ))}
-      </div>
+      {props.produtos.map(produto => (
+        <Produto produto={produto} key={produto.id} />
+      ))}
     </ProdutosWrapper>
   )
 }

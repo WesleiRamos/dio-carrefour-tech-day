@@ -1,5 +1,6 @@
 import React from 'react'
 import Cabecalho from '.'
+import * as Style from './styles'
 import { APP_DEFAULT_STATE } from '../../store/slices'
 import { render, screen, fireEvent, createMockStore } from '../../test/render'
 
@@ -14,7 +15,7 @@ describe('<Cabecalho />', () => {
 
     const { container } = render(<Cabecalho />, { store })
 
-    const logoElement = container.querySelector('.logo img')
+    const logoElement = container.querySelector(`${Style.Logo} img`)
     expect(logoElement).toBeInTheDocument()
 
     const caixaBuscaElement = container.querySelector('.barra-busca')
@@ -26,7 +27,7 @@ describe('<Cabecalho />', () => {
     const cepValueElement = screen.getByText(/12345000/i)
     expect(cepValueElement).toBeInTheDocument()
 
-    const carrinhoElement = container.querySelector('.carrinho')
+    const carrinhoElement = container.querySelector(`${Style.Carrinho}`)
     expect(carrinhoElement).toBeInTheDocument()
 
     await fireEvent.click(carrinhoElement as Element)

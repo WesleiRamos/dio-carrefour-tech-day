@@ -1,4 +1,4 @@
-import InputWrapper from './styles'
+import InputWrapper, * as Style from './styles'
 
 type InputProps = {
   text?: string,
@@ -19,9 +19,9 @@ const Input = (props: InputProps) => {
         onChange={props.onChange || DEFAULT_CALLBACK}
       />
       
-      <div className='btn' onClick={props.onClick || DEFAULT_CALLBACK}>
+      <Style.Button onClick={props.onClick || DEFAULT_CALLBACK}>
         { props.text || <i className='gg-search' /> }
-      </div>
+      </Style.Button>
     </InputWrapper>
   )
 }

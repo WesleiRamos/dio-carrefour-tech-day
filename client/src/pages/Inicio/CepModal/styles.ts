@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
 const CepModalWrapper = styled.section`
-  .content {
-    max-width: 400px;
-  }
-
   h3 {
     color: #02296d;
     margin-bottom: 20px;
@@ -18,15 +14,19 @@ const CepModalWrapper = styled.section`
     color: #666666;
     margin-bottom: 10px;
   }
+`
 
-  .aviso {
-    text-align: center;
-    margin-top: 20px;
-    
-    p {
-      color: black;
-      font-weight: bold;
-    }
+export const Content = styled.div`
+  max-width: 400px;
+`
+
+export const Aviso = styled.div`
+  text-align: center;
+  margin-top: 20px;
+  
+  p {
+    color: black;
+    font-weight: bold;
   }
 `
 

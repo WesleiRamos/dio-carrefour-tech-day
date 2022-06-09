@@ -1,5 +1,6 @@
 import Produto from '.'
 import React from 'react'
+import * as Style from './styles'
 import { PRODUTO } from '../../../../test/server'
 import { render, screen, fireEvent, createMockStore } from '../../../../test/render'
 
@@ -7,7 +8,7 @@ describe('<Produtos.Produto />', () => {
   test('renderiza o produto fora do carrinho', () => {
     const { container } = render(<Produto produto={PRODUTO} />)
     
-    const imagemElement = container.querySelector('.imagem img')
+    const imagemElement = container.querySelector(`${Style.Imagem} img`)
     expect(imagemElement).toBeInTheDocument()
     expect(imagemElement).toHaveAttribute('src', PRODUTO.imagem)
     expect(imagemElement).toHaveAttribute('alt', PRODUTO.nome)

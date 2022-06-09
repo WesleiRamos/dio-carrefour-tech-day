@@ -8,14 +8,6 @@ const ProdutoWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  .imagem {
-    width: 90%;
-
-    img {
-      width: 100%;
-    }
-  }
-
   p, .nome  {
     margin-bottom: 10px;
   }
@@ -24,22 +16,30 @@ const ProdutoWrapper = styled.div`
     color: #666666;
     text-decoration: none;
   }
+`
 
-  .preco {
-    color: #205bc6;
-    font-weight: bold;
-    font-size: 20px;
+export const Imagem = styled.div`
+  width: 90%;
+
+  img {
+    width: 100%;
   }
+`
 
-  .acao {
-    height: 50px;
+export const Preco = styled.p`
+  color: #205bc6;
+  font-weight: bold;
+  font-size: 20px;
+`
 
-    p {
-      text-align: center;
-      color: rgb(64, 170, 96);
-      font-size: 12px;
-      margin: 5px 0;
-    }
+export const Acao = styled.div`
+  height: 50px;
+
+  p {
+    text-align: center;
+    color: rgb(64, 170, 96);
+    font-size: 12px;
+    margin: 5px 0;
   }
 `
 

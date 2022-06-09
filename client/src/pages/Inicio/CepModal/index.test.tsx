@@ -65,8 +65,8 @@ describe('<CepModal />', () => {
     await fireEvent.change(inputElement as Element, { target: { value: '01001-000' } })
     expect(inputElement).toHaveValue('01001-000')
 
-    const btnElement = container.querySelector('.btn')
-    await fireEvent.click(btnElement as Element)
+    const btnElement = screen.getByText('Buscar')
+    await fireEvent.click(btnElement)
 
     await waitFor(() => expect(store.getState().app.cep).toBe('01001-000'))
     await waitFor(() => expect(store.getState().app.pontos).toHaveLength(1))

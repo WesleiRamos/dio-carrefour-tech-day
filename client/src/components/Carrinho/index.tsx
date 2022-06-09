@@ -1,8 +1,8 @@
 import Item from './Item'
 import Button from '../Button'
-import CarrinhoWrapper from './styles'
 import { AppDispatch } from '../../store'
 import React, { useEffect, useRef } from 'react'
+import CarrinhoWrapper, * as Style from './styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCarrinhoState, alternarCarrinho } from '../../store/slices'
 
@@ -47,31 +47,31 @@ const Carrinho = () => {
 
   return (
     <CarrinhoWrapper onClick={onClickOutside}>
-      <div ref={reference} className='content'>
-        <div className='cabecalho'>
+      <Style.Conteudo ref={reference}>
+        <Style.Cabecalho>
           <div onClick={() => dispatch(alternarCarrinho())}>
             <i className='gg-close' />
           </div>
   
           <h2>Carrinho ({ carrinhoState.carrinho.length })</h2>  
-        </div>
+        </Style.Cabecalho>
 
-        <div className='itens'>
+        <Style.Itens>
           {carrinhoState.carrinho.map(produto => (
             <Item
               key={produto.id}
               produto={produto}
             />
           ))}
-        </div>
+        </Style.Itens>
 
-        <div className='subtotal'>
+        <Style.Subtotal>
           <div>
             <span>
               Subtotal ({ carrinhoState.carrinho.length } produto{ carrinhoState.carrinho.length >= 2 && 's' })
             </span>
 
-            <span className='preco'>
+            <span>
               { subtotal }
             </span>
           </div>
@@ -79,8 +79,8 @@ const Carrinho = () => {
           <Button className='btn'>
             Finalizar Compra
           </Button>
-        </div>
-      </div>
+        </Style.Subtotal>
+      </Style.Conteudo>
     </CarrinhoWrapper>
   )
 }

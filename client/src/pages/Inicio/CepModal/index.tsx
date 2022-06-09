@@ -1,7 +1,7 @@
-import CepModalWrapper from './styles'
 import { useState, useEffect } from 'react'
 import { AppDispatch } from '../../../store'
 import Input from '../../../components/Input'
+import CepModalWrapper, * as Style from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAppState, getPontos, getProdutos } from '../../../store/slices'
 
@@ -53,7 +53,7 @@ const CepModal = () => {
 
   return (
     <CepModalWrapper className='modal'>
-      <div className='content'>
+      <Style.Content className='content'>
         <h3>Receber em casa</h3>
         <p>Digite seu CEP para visualizar ofertas para sua região</p>
 
@@ -64,10 +64,10 @@ const CepModal = () => {
           onChange={e => setCepState(e.target.value.trim())}
         />
 
-        <div className='aviso'>
+        <Style.Aviso>
           {renderInformacao()}
-        </div>
-      </div>
+        </Style.Aviso>
+      </Style.Content>
     </CepModalWrapper>
   )
 }

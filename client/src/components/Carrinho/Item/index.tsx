@@ -1,7 +1,7 @@
-import ItemWrapper from './styles'
 import Quantity from '../../Quantity'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../../store'
+import ItemWrapper, * as Style from './styles'
 import { removerDoCarrinho, alterarQuantidadeProduto } from '../../../store/slices'
 
 type ItemProps = {
@@ -16,23 +16,21 @@ const Item = (props: ItemProps) => {
 
   return (
     <ItemWrapper>
-      <div className='imagem'>
+      <Style.Imagem>
         <img src={props.produto.imagem} alt={props.produto.nome} />
-      </div>
+      </Style.Imagem>
       
-      <div className='informacoes'>
+      <Style.Informacoes>
         <div className='flex'>
-          <p className='nome'>
-            {props.produto.nome}
-          </p>
+          <p>{props.produto.nome}</p>
 
-          <div className='remover' onClick={() => dispatch(removerDoCarrinho(props.produto))}>
+          <Style.Remover onClick={() => dispatch(removerDoCarrinho(props.produto))}>
             <i className='gg-trash-empty'/>
-          </div>
+          </Style.Remover>
         </div>
 
         <div className='flex'>
-          <p className='preco'>
+          <p>
             {preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
           </p>
 
@@ -42,11 +40,11 @@ const Item = (props: ItemProps) => {
             onChange={quantidade => dispatch(alterarQuantidadeProduto({ ...props.produto, quantidade }))}
           />
 
-          <p className='total'>
+          <Style.Total>
             {total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-          </p>
+          </Style.Total>
         </div>
-      </div>
+      </Style.Informacoes>
     </ItemWrapper>
   )
 }

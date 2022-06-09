@@ -1,5 +1,6 @@
 import Inicio from '.'
 import React from 'react'
+import ProdutosWrapper from './Produtos/styles'
 import { APP_DEFAULT_STATE } from '../../store/slices'
 import { PRODUTOS, PONTOS_DE_VENDA } from '../../test/server'
 import { render, screen, createMockStore } from '../../test/render'
@@ -33,7 +34,7 @@ describe('<Inicio />', () => {
     const ordenarPorElement = screen.getByText('Ordenar por')
     expect(ordenarPorElement).toBeInTheDocument()
 
-    const produtosElement = container.querySelector('.produtos')
+    const produtosElement = container.querySelector(`${ProdutosWrapper}`)
     expect(produtosElement).toBeInTheDocument()
     expect(produtosElement?.children).toHaveLength(3)
   })

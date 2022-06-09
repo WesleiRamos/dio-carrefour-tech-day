@@ -1,7 +1,7 @@
 import Input from '../Input'
-import CabecalhoWrapper from './styles'
 import { Link } from 'react-router-dom'
 import { AppDispatch } from '../../store'
+import CabecalhoWrapper, * as Style from './styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectAppState, selectCarrinhoState, alternarCarrinho, removerCep } from '../../store/slices'
 
@@ -16,36 +16,36 @@ const Cabecalho = () => {
         <div className='mobile'>
           <i className='gg-menu'/>
         </div>
-        
-        <div className='logo'>
+
+        <Style.Logo>
           <Link to='/'>
             <img
               alt='Carrefour logo'
               src={process.env.REACT_APP_LOGO}
             />
           </Link>
-        </div>
-
+        </Style.Logo>
+        
         <Input
           className='barra-busca not-mobile'
           placeholder='Pesquise por produtos ou marcas'
         />
 
         <div className='flex'>
-          <div className='cep'>
+          <Style.CEP>
             <p>Entregar no CEP</p>
             <span onClick={() => dispatch(removerCep())}>
               {appState.cep}
             </span>
-          </div>
+          </Style.CEP>
 
-          <div className='carrinho' onClick={() => dispatch(alternarCarrinho())}>
-            <span className='contagem'>
+          <Style.Carrinho onClick={() => dispatch(alternarCarrinho())}>
+            <span>
               {carrinhoState.carrinho.length}
             </span>
 
             <i className='gg-shopping-cart' />
-          </div>
+          </Style.Carrinho>
         </div>
       </div>
 

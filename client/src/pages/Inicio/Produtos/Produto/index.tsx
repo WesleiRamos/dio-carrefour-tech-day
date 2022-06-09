@@ -1,6 +1,6 @@
-import ProdutoWrapper from './styles'
 import { Link } from 'react-router-dom'
 import { AppDispatch } from '../../../../store'
+import ProdutoWrapper, * as Style from './styles'
 import Button from '../../../../components/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import Quantity from '../../../../components/Quantity'
@@ -45,21 +45,21 @@ const Produto = (props: ProdutoProps) => {
 
   return (
     <ProdutoWrapper>
-      <div className='imagem'>
+      <Style.Imagem>
         <img src={props.produto.imagem} alt={props.produto.nome} />
-      </div>
+      </Style.Imagem>
 
       <Link className='nome' to={`/produto/${props.produto.id}`}>
         {props.produto.nome}
       </Link>
 
-      <p className='preco'>
+      <Style.Preco>
         {props.produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-      </p>
+      </Style.Preco>
 
-      <div className='acao'>
+      <Style.Acao>
         {renderizarAcao()}
-      </div>
+      </Style.Acao>
     </ProdutoWrapper>
   )
 }
