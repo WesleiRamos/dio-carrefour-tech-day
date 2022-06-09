@@ -15,7 +15,7 @@ describe('<Input />', () => {
       />
     ))
 
-    const botaoElement = screen.getByText(/Test/i)
+    const botaoElement = screen.getByText('Test')
     expect(botaoElement).toBeInTheDocument()
 
     const inputElement = container.querySelector('input')

@@ -21,10 +21,10 @@ describe('<Cabecalho />', () => {
     const caixaBuscaElement = container.querySelector('.barra-busca')
     expect(caixaBuscaElement).toBeInTheDocument()
 
-    const cepLabelElement = screen.getByText(/Entregar no CEP/i)
+    const cepLabelElement = screen.getByText('Entregar no CEP')
     expect(cepLabelElement).toBeInTheDocument()
 
-    const cepValueElement = screen.getByText(/12345000/i)
+    const cepValueElement = screen.getByText('12345000')
     expect(cepValueElement).toBeInTheDocument()
 
     const carrinhoElement = container.querySelector(`${Style.Carrinho}`)
