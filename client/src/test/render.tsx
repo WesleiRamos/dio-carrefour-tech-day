@@ -7,7 +7,14 @@ import appReducer, { APP_DEFAULT_STATE } from '../store/slices/app'
 import carrinhoReducer, { CARRINHO_DEFAULT_STATE } from '../store/slices/carrinho'
 
 type DefaultRoute = {
+  /**
+   * Rota
+   */
   path: string,
+
+  /**
+   * Fake "link" para o MemoryRouter
+   */
   entry: string[]
 }
 
@@ -25,6 +32,10 @@ const DEFAULT_ROUTE: DefaultRoute = {
   entry: [ '/' ]
 }
 
+/**
+ * Cria uma store especifica para teste, caso não seja passado nenhum estado
+ * cria com o estado padrão
+ */
 export const createMockStore = ({ appState = APP_DEFAULT_STATE, carrinhoState = CARRINHO_DEFAULT_STATE } = {}) => {
   const store = configureStore({
     reducer: {
@@ -39,6 +50,9 @@ export const createMockStore = ({ appState = APP_DEFAULT_STATE, carrinhoState = 
   return store
 }
 
+/**
+ * Renderiza um componente dentro de um Provider com uma store e dentro de uma rota
+ */
 const render = (ui: UI, { appState, carrinhoState, route = DEFAULT_ROUTE, store = createMockStore({ appState, carrinhoState }) }: RenderOptions = {}) => {
   const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <Provider store={store}>

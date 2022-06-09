@@ -24,6 +24,10 @@ export const PRODUTOS = [
   PRODUTO
 ].map((produto, index) => ({ ...produto, id: `${index}` }))
 
+/**
+ * Cria um servidor web falso para os testes
+ * @returns
+ */
 const createMockServer = () => setupServer(
   rest.get<Ponto[]>(`${process.env.REACT_APP_API_URL}/pontos`, (req, res, ctx) => {
     return res(

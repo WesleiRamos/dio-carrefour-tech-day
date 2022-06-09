@@ -32,10 +32,14 @@ const criarAppSlice = (initialState: AppState = APP_DEFAULT_STATE) => createSlic
   initialState,
   name: 'app',
   reducers: {
+    /**
+     * @param state 
+     */
     removerCep: (state: AppState) => {
       state.cep = ''
     }
   },
+
   extraReducers: (builder) => {
     builder
       // Pontos de venda

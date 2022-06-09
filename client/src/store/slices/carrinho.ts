@@ -37,6 +37,7 @@ const criarCarrinhoSlice = (initialState: CarrinhoState = CARRINHO_DEFAULT_STATE
     },
 
     /**
+     * Adiciona um produto ao carrinho caso ele não exista
      * @param state 
      * @param param1 
      * @returns 
@@ -51,6 +52,7 @@ const criarCarrinhoSlice = (initialState: CarrinhoState = CARRINHO_DEFAULT_STATE
     },
 
     /**
+     * Altera a quantidade de um produto, caso a quantidade seja 0, o produto é removido da lista
      * @param state 
      * @param param1 
      * @returns 
