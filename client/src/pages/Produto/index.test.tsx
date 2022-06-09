@@ -58,7 +58,7 @@ describe('<Produto />', () => {
 
     const { container } = render(<Produto />, { store, route })
 
-    const adicionarBotao = container.querySelector('button.flex')
+    const adicionarBotao = container.querySelector('button')
     expect(adicionarBotao).toBeInTheDocument()
 
     await fireEvent.click(adicionarBotao as Element)

@@ -67,6 +67,17 @@ export const Marca = styled.p`
   }
 `
 
+export const Preco = styled.div`
+  margin-bottom: 25px;
+
+  p {
+    flex: 1;
+    font-weight: 700;
+    color: rgb(30, 91, 198);
+    font-size: 28px;
+  }
+`
+
 export const AdicionarCarrinho = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,10 +88,12 @@ export const AdicionarCarrinho = styled.div`
 
   button {
     height: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
     
     i {
-    transform: scale(1.2);
+      transform: translateY(-2px) scale(1.2);
     }
   }
 
@@ -89,17 +102,6 @@ export const AdicionarCarrinho = styled.div`
     color: rgb(64, 170, 96);
     font-size: 12px;
     margin: 5px 0;
-  }
-`
-
-export const Preco = styled.div`
-  margin-bottom: 25px;
-
-  p {
-    flex: 1;
-    font-weight: 700;
-    color: rgb(30, 91, 198);
-    font-size: 28px;
   }
 `
 

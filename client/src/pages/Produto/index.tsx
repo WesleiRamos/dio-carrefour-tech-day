@@ -53,7 +53,7 @@ const Produto = () => {
   const renderizarAcao = () => {
     if (quantidade === 0) {
       return (
-        <Button className='flex' onClick={() => alterarQuantidade(1)}>
+        <Button onClick={() => alterarQuantidade(1)}>
           <i className='gg-shopping-cart'/>
           <span>ADICIONAR AO CARRINHO</span>
         </Button>

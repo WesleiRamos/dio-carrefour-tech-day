@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const QuantityWrapper = styled.div`
+  user-select: none;
   box-sizing: border-box;
   padding: 5px 0;
   box-shadow: rgb(0 0 0 / 15%) 0px 2px 4px;
